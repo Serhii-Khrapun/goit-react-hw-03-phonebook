@@ -32,10 +32,10 @@ class App extends React.Component {
   }
 
   contactName = () => {
-    return this.state.contacts.map(contact => contact.name.toLowerCase());
+    return this.state.contacts.map(contact => contact.name.toLowerCase().trim());
   };
   formSubmitHandler = data => {
-    if (this.contactName().includes(data.name.toLowerCase())) {
+    if (this.contactName().includes(data.name.toLowerCase().trim())) {
       alert(`${data.name} is already in contacts`);
     } else {
       this.setState(prevState => ({
